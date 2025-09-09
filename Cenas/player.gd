@@ -10,7 +10,7 @@ class_name player
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor:
+	if not is_on_floor():
 		velocity.y += gravity * delta
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = jump_velocity
@@ -22,5 +22,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, speed * direction, run_speed_damping * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * delta)
+	
+	$AnimatedSprite2D.trigger_animation(velocity, direction)
 	
 	move_and_slide()
