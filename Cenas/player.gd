@@ -21,10 +21,16 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = jump_velocity
-	
+		
+	if Input.is_action_just_pressed("Space") and is_on_floor():
+		velocity.y = jump_velocity
+		
 	if Input.is_action_just_released("Jump") and velocity.y < 0:
 		velocity.y *= 0.5
-	
+		
+	if Input.is_action_just_released("Space") and velocity.y < 0:
+		velocity.y *= 0.5
+		
 	var direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = lerp(velocity.x, speed * direction, run_speed_damping * delta)
