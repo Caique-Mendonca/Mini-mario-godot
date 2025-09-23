@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn6veilikae88"]
+[gd_scene load_steps=6 format=3 uid="uid://cn6veilikae88"]
 
 [ext_resource type="Texture2D" uid="uid://dl0kuv8e1o6n3" path="res://Assets Super Mario Bros/Sprites/Goomba_Flat.png" id="1_11lup"]
 [ext_resource type="Script" uid="uid://bq4lg7e6u0r08" path="res://Cenas/goomba.gd" id="1_jg8wq"]
-[ext_resource type="Texture2D" uid="uid://dhmodocnsu7ds" path="res://Assets Super Mario Bros/Sprites/Goomba_Walk1.png" id="2_jg8wq"]
-[ext_resource type="Texture2D" uid="uid://cxtty1fuwy5ab" path="res://Assets Super Mario Bros/Sprites/Goomba_Walk2.png" id="3_w2rut"]
+[ext_resource type="Texture2D" uid="uid://cclr0l7254org" path="res://Assets Jogo 2/Sprites/Carro 1.png" id="3_11lup"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oulaa"]
 animations = [{
@@ -17,10 +16,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jg8wq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_w2rut")
+"texture": ExtResource("3_11lup")
 }],
 "loop": true,
 "name": &"walk",
@@ -28,26 +24,30 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mn0i"]
-size = Vector2(16, 16)
+size = Vector2(476.47064, 188.2353)
 
 [node name="Goomba" type="Area2D"]
+scale = Vector2(0.17, 0.17)
 collision_layer = 4
 script = ExtResource("1_jg8wq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oulaa")
-animation = &"walk"
+animation = &"death"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.882353, 11.764706)
+scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_8mn0i")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 8)
+target_position = Vector2(0, 105.88234)
 collision_mask = 2
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(0.8, 0.8)
+rect = Rect2(-286.7647, -102.94118, 588.23535, 235.29413)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
