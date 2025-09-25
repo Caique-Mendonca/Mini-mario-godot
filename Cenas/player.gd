@@ -69,3 +69,13 @@ func _die():
 	death_tween.tween_property(self, "position", position + Vector2(0, -25), 0.4)
 	death_tween.tween_property(self, "position", position + Vector2(0, 250), 1)
 	death_tween.tween_callback(func (): get_tree().reload_current_scene())
+
+func process_camera_bounds():
+	if global_position.x > camera.position.x and global_position.y <= 0:
+		camera.position.x = global_position.x
+	
+	var camera_left_bound = 8 + camera.position.x - get_viewport_rect().size.x / 2 / camera.zoom.x
+
+	if global_position.x <= camera_left_bound:
+		velocity.x = 0
+		global_position.x = camera_left_bound + .001

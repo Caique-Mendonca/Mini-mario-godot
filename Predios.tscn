@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dieydream46k5"]
+
+[ext_resource type="Texture2D" uid="uid://bm7eny6sgagci" path="res://Assets Jogo 2/Sprites/Predios.png" id="1_6hwkm"]
+
+[node name="Predios" type="Sprite2D"]
+texture = ExtResource("1_6hwkm")
