@@ -85,12 +85,6 @@ size = Vector2(50, 150.00002)
 scale = Vector2(0.2, 0.2)
 collision_mask = 6
 script = ExtResource("1_pmvhq")
-speed = null
-jump_velocity = null
-run_speed_damping = null
-min_stomp_dregree = null
-max_stomp_dregree = null
-stomp_y_velocity = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pmvhq")

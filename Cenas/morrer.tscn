@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfpgpa87yijuk"]
+
+[ext_resource type="Script" uid="uid://dy2pnr80aqfs7" path="res://Cenas/morrer.gd" id="1_oafd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_potv7"]
+
+[node name="Morrer" type="Area2D"]
+script = ExtResource("1_oafd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_potv7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

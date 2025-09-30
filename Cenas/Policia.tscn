@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpdbimi0m0i7h"]
+
+[ext_resource type="Texture2D" uid="uid://du3obfd6f3l31" path="res://Assets Jogo 2/Sprites/police-station-pixel-art-style-260nw-1307839381-removebg-preview.png" id="1_nq0xg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usgum"]
+size = Vector2(225, 126)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nq0xg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 0)
+shape = SubResource("RectangleShape2D_usgum")
