@@ -543,15 +543,18 @@ shape = SubResource("RectangleShape2D_btbr3")
 
 [node name="Moto" parent="Node" instance=ExtResource("10_7yi6i")]
 position = Vector2(1200, 69.00001)
+speed = 100.0
 
 [node name="Moto2" parent="Node" instance=ExtResource("10_7yi6i")]
 position = Vector2(1281, 68)
+speed = 100.0
 
 [node name="Moto3" parent="Node" instance=ExtResource("10_7yi6i")]
 position = Vector2(1394, 68.00001)
+speed = 100.0
 
 [node name="Player" parent="." instance=ExtResource("5_ja1os")]
-position = Vector2(1139, 65.99999)
+position = Vector2(-161.99998, 63.000004)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(739.99994, -364.99997)

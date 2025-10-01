@@ -34,5 +34,5 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		(area.get_parent() as Player)._die()
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	_die() # Replace with function body.
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+#	_die() # Replace with function body.
