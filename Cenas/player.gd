@@ -66,4 +66,7 @@ func _die():
 	death_tween.tween_property(self, "position", position + Vector2(0, -25), 0.4)
 	death_tween.tween_property(self, "position", position + Vector2(0, 250), 1)
 	death_tween.tween_callback(func(): get_tree().reload_current_scene())
-	
+
+func _on_area_body_entered(body):
+	if body.name == "Moto":
+		_die()
