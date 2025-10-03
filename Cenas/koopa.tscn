@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://doi60hufsardx" path="res://Cenas/koopa.gd" id="1_amv0p"]
 [ext_resource type="Texture2D" uid="uid://d0n6srd2hrk0i" path="res://Assets Super Mario Bros/Sprites/Koopa_Shell.png" id="1_xcbc3"]
-[ext_resource type="Texture2D" uid="uid://dk7v5fgx6ojkq" path="res://Assets Jogo 2/Sprites/Carro 2.png" id="3_xcbc3"]
+[ext_resource type="Texture2D" uid="uid://bvp2w3n111te6" path="res://Assets Jogo 2/Sprites/Moto.png" id="3_xcbc3"]
 [ext_resource type="Shape2D" uid="uid://xmwegrsws616" path="res://Collisions/koopa_full.tres" id="4_lejpl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p0sr4"]
@@ -25,29 +25,29 @@ animations = [{
 }]
 
 [node name="Koopa" type="Area2D"]
-scale = Vector2(0.17, 0.17)
+scale = Vector2(0.2, 0.2)
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_amv0p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p0sr4")
-animation = &"death"
+animation = &"walk"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(17.647022, 11.764692)
-scale = Vector2(0.9999998, 0.9999998)
+position = Vector2(2.941182, 2.9411778)
+scale = Vector2(0.9999996, 0.9999996)
 shape = ExtResource("4_lejpl")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 99.99999)
+target_position = Vector2(0, 52.94117)
 collision_mask = 2
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, -1.19209e-07)
 scale = Vector2(1, 1.2)
-rect = Rect2(-211.76471, -63.725487, 458.82355, 147.0588)
+rect = Rect2(-88.23529, -29.411762, 182.35294, 63.725483)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

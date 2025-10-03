@@ -9,11 +9,12 @@ size = Vector2(190, 90)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhcy1"]
 size = Vector2(175, 85)
 
-[node name="Moto" type="CharacterBody2D"]
+[node name="Moto" type="Area2D"]
 scale = Vector2(0.2, 0.2)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_gj1et")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_txvxq")
