@@ -46,10 +46,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		(area as Koopa)._on_stomp(global_position)
 		return
 	
-	var angle = rad_to_deg(position.angle_to_point((area as Enemy).position))
-	if angle > min_stomp_degree and angle < max_stomp_degree:
-		(area as Enemy)._die()
-		velocity.y = stomp_y_velocity
 	else:
 		_die()
 		
